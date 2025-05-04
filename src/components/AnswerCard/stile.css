@@ -1,0 +1,14 @@
+.borAnswer .text-lg, .text-stile{
+ padding: 1rem;  
+ margin: 0;
+}
+
+.text-lg{
+    font-weight: 500;
+}
+.text-stile{
+font-weight: 400;
+
+
+}
+

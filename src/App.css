@@ -1,0 +1,24 @@
+
+
+.container-App{
+display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.text-center{
+  color: aliceblue;
+  text-align: center;
+  margin: auto;
+  padding-top: 2rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.img-ai{
+  width: 300px;
+  
+}
