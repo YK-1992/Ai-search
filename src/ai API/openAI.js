@@ -2,7 +2,7 @@ import { OpenAI } from "openai";
 
 const openai = new OpenAI({
   baseURL: "https://openrouter.ai/api/v1", 
-  apiKey: import.meta.env.VITE_OPENAI_API_KEY, 
+  apiKey: import.meta.env.VITE_OPENROUTER_API_KEY, 
   dangerouslyAllowBrowser: true,
 });
 export const fetchStudyExplanation = async (question, level) => {
