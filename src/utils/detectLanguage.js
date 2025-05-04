@@ -1,4 +1,4 @@
-// Функция для определения языка текста по алфавиту и ключевым словам
+
 export const detectLanguage = (text) => {
     if (!text) return "unknown";
     const lowered = text.toLowerCase();

@@ -1,15 +1,21 @@
 import { OpenAI } from "openai";
 
 const openai = new OpenAI({
-  baseURL: "https://openrouter.ai/api/v1", 
-  apiKey: import.meta.env.VITE_OPENROUTER_API_KEY, 
+
+  apiKey: import.meta.env.VITE_OPENROUTER_API_KEY,
+  baseURL: "https://openrouter.ai/api/v1",
   dangerouslyAllowBrowser: true,
+  defaultHeaders: {
+    "HTTP-Referer": "https://light-ai-search.netlify.app/", // или http://localhost:5173
+    "X-Title": "AI Study Buddy",
+  },
 });
+
 export const fetchStudyExplanation = async (question, level) => {
   try {
     const response = await openai.chat.completions.create({
-      model: "openai/gpt-3.5-turbo",
-  
+      // model: "openai/gpt-4o",
+      model: "mistralai/mistral-7b-instruct",
       messages: [
         {
           role: "system",
@@ -25,7 +31,7 @@ export const fetchStudyExplanation = async (question, level) => {
 
     return response.choices[0].message.content;
   } catch (error) {
-    console.error("Ошибка получения ответа от OpenAI:", error);
+    console.error("Ошибка получения ответа от OpenRouter:", error.response?.data || error.message);
     return "Произошла ошибка. Попробуйте ещё раз.";
   }
 };
